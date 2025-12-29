@@ -11,11 +11,29 @@ export default function ContactPage() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -77,8 +95,8 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center border-4 border-black bg-[#ff3d00] shadow-[2px_2px_0px_#000000]">
-                    <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center border-4 border-black bg-[#ffcc00] shadow-[2px_2px_0px_#000000]">
+                    <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -187,9 +205,10 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    className="brutalist-btn mt-6 w-full border-4 border-black bg-[#ff3d00] px-8 py-4 font-mono text-lg font-black uppercase text-white shadow-[4px_4px_0px_#000000]"
+                    disabled={loading}
+                    className="brutalist-btn mt-6 w-full border-4 border-black bg-[#ff3d00] px-8 py-4 font-mono text-lg font-black uppercase text-white shadow-[4px_4px_0px_#000000] disabled:opacity-50"
                   >
-                    Send Message
+                    {loading ? "Sending..." : "Send Message"}
                   </button>
                 </form>
               )}

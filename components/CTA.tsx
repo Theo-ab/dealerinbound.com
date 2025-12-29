@@ -8,13 +8,32 @@ export default function CTA() {
     email: "",
     dealership: "",
     phone: "",
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -154,11 +173,27 @@ export default function CTA() {
                   </div>
                 </div>
 
+                <div className="mt-4">
+                  <label className="block font-mono text-sm font-bold uppercase text-black">
+                    Message (Optional)
+                  </label>
+                  <textarea
+                    rows={3}
+                    className="mt-2 w-full border-4 border-black bg-[#fffef0] px-4 py-3 font-mono text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none"
+                    placeholder="Tell us about your dealership..."
+                    value={formData.message}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
+                  />
+                </div>
+
                 <button
                   type="submit"
-                  className="brutalist-btn mt-6 w-full border-4 border-black bg-[#ff3d00] px-8 py-4 font-mono text-lg font-black uppercase text-white shadow-[4px_4px_0px_#000000]"
+                  disabled={loading}
+                  className="brutalist-btn mt-6 w-full border-4 border-black bg-[#ff3d00] px-8 py-4 font-mono text-lg font-black uppercase text-white shadow-[4px_4px_0px_#000000] disabled:opacity-50"
                 >
-                  Get Your Demo
+                  {loading ? "Sending..." : "Get Your Demo"}
                 </button>
               </form>
             )}
