@@ -49,36 +49,36 @@ export default function CTA() {
   };
 
   return (
-    <section id="contact" className="bg-black py-24">
+    <section id="contact" className="bg-[#fffef0] py-12 lg:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-          {/* Left side - Message */}
-          <div>
-            <div className="inline-block border-4 border-white bg-[#ff3d00] px-4 py-2 font-mono text-sm uppercase tracking-wider text-white shadow-[4px_4px_0px_#ffcc00]">
+          {/* Left side - Message (hidden on mobile) */}
+          <div className="hidden lg:block">
+            <div className="inline-block border-4 border-black bg-[#ff3d00] px-4 py-2 font-mono text-sm uppercase tracking-wider text-white shadow-[4px_4px_0px_#000000]">
               Get Started
             </div>
-            <h2 className="mt-6 text-5xl font-black uppercase leading-tight text-white sm:text-6xl">
+            <h2 className="mt-6 text-5xl font-black uppercase leading-tight text-black sm:text-6xl">
               Stop Missing{" "}
-              <span className="inline-block border-4 border-white bg-[#0057ff] px-3">
+              <span className="inline-block border-4 border-black bg-[#0057ff] px-3 text-white">
                 Calls
               </span>
             </h2>
-            <p className="mt-6 max-w-md border-l-4 border-[#ffcc00] pl-6 font-mono text-lg text-gray-300">
+            <p className="mt-6 max-w-md border-l-4 border-black pl-6 font-mono text-lg text-gray-700">
               Every missed call is a missed sale. Book a demo and see
               DealerInbound in action.
             </p>
 
             {/* Stats reminder */}
             <div className="mt-10 flex gap-4">
-              <div className="border-4 border-white bg-[#ff3d00] p-4">
+              <div className="border-4 border-black bg-[#ff3d00] p-4">
                 <div className="font-mono text-2xl font-black text-white">98%</div>
                 <div className="font-mono text-xs uppercase text-white/80">Answer Rate</div>
               </div>
-              <div className="border-4 border-white bg-[#0057ff] p-4">
+              <div className="border-4 border-black bg-[#0057ff] p-4">
                 <div className="font-mono text-2xl font-black text-white">+40%</div>
                 <div className="font-mono text-xs uppercase text-white/80">More Bookings</div>
               </div>
-              <div className="border-4 border-white bg-[#ffcc00] p-4">
+              <div className="border-4 border-black bg-[#ffcc00] p-4">
                 <div className="font-mono text-2xl font-black text-black">24/7</div>
                 <div className="font-mono text-xs uppercase text-black/80">Always On</div>
               </div>
@@ -88,7 +88,7 @@ export default function CTA() {
           {/* Right side - Form */}
           <div>
             {submitted ? (
-              <div className="border-4 border-white bg-[#ffcc00] p-8 shadow-[8px_8px_0px_#ff3d00]">
+              <div className="border-4 border-black bg-[#ffcc00] p-8 shadow-[8px_8px_0px_#000000]">
                 <div className="mb-4 inline-block border-4 border-black bg-black p-4">
                   <svg
                     className="h-8 w-8 text-white"
@@ -114,7 +114,7 @@ export default function CTA() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="border-4 border-white bg-white p-8 shadow-[8px_8px_0px_#ff3d00]"
+                className="border-4 border-black bg-white p-8 shadow-[8px_8px_0px_#000000]"
               >
                 <div className="mb-4 inline-block border-4 border-black bg-[#0057ff] px-4 py-2 font-mono text-sm uppercase tracking-wider text-white">
                   Book Demo

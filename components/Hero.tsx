@@ -52,11 +52,11 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right side - Stats Grid */}
-          <div className="relative">
+          {/* Right side - Stats Grid (hidden on mobile) */}
+          <div className="relative hidden lg:block">
             {/* Decorative shapes */}
-            <div className="absolute -top-8 -right-8 w-24 h-24 bg-[#ff3d00] rounded-full opacity-60 hidden lg:block"></div>
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-[#0057ff] rotate-45 opacity-60 hidden lg:block"></div>
+            <div className="absolute -top-8 -right-8 w-24 h-24 bg-[#ff3d00] rounded-full opacity-60"></div>
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-[#0057ff] rotate-45 opacity-60"></div>
 
             <div className="grid grid-cols-2 gap-4">
               {[
