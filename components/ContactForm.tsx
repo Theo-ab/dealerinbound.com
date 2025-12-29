@@ -77,15 +77,15 @@ export default function ContactForm() {
       ) : (
         <form
           onSubmit={handleSubmit}
-          className="border-4 border-black bg-white p-4 shadow-[6px_6px_0px_#000000] md:p-5"
+          className="border-4 border-black bg-white p-5 shadow-[6px_6px_0px_#000000]"
         >
-          <div className="mb-3 border-2 border-[#0057ff] bg-[#e8f0ff] p-2">
+          <div className="mb-4 border-2 border-[#0057ff] bg-[#e8f0ff] p-3">
             <p className="font-mono text-xs text-black">
               🚀 <span className="font-bold">Live Demo:</span> Our AI will call you as a car buyer
             </p>
           </div>
 
-          <div className="grid gap-2 sm:grid-cols-2">
+          <div className="grid gap-3 sm:grid-cols-2">
             <div>
               <label className="block font-mono text-xs font-bold uppercase text-black">
                 Name
@@ -151,7 +151,7 @@ export default function ContactForm() {
             </div>
           </div>
 
-          <div className="mt-2">
+          <div className="mt-3">
             <label className="block font-mono text-xs font-bold uppercase text-black">
               Confirm Phone *
             </label>
@@ -174,7 +174,7 @@ export default function ContactForm() {
             )}
           </div>
 
-          <div className="mt-2">
+          <div className="mt-3">
             <label className="block font-mono text-xs font-bold uppercase text-black">
               Message (Optional)
             </label>
@@ -192,7 +192,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={loading}
-            className="brutalist-btn mt-3 w-full border-4 border-black bg-[#ff3d00] px-4 py-2.5 font-mono text-sm font-black uppercase text-white shadow-[4px_4px_0px_#000000] disabled:opacity-50"
+            className="brutalist-btn mt-4 w-full border-4 border-black bg-[#ff3d00] px-4 py-3 font-mono text-sm font-black uppercase text-white shadow-[4px_4px_0px_#000000] disabled:opacity-50"
           >
             {loading ? "Sending..." : "Get Your Demo"}
           </button>

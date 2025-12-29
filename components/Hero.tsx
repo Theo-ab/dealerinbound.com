@@ -55,7 +55,7 @@ export default function Hero() {
           </div>
 
           {/* Right side - Form */}
-          <div className="w-full sm:w-80 sm:flex-shrink-0">
+          <div className="w-full sm:w-96 lg:w-[420px] sm:flex-shrink-0">
             <ContactForm />
           </div>
         </div>
