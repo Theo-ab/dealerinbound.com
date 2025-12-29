@@ -1,8 +1,10 @@
+import ContactForm from "./ContactForm";
+
 export default function Hero() {
   return (
     <section className="relative bg-[#fffef0] overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-24">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
           {/* Left side - Content */}
           <div>
             <div className="mb-6 inline-block border-4 border-black bg-[#ffcc00] px-4 py-2 font-mono text-sm uppercase tracking-wider shadow-[4px_4px_0px_#000000]">
@@ -52,32 +54,9 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right side - Stats Grid (hidden on mobile) */}
-          <div className="relative hidden lg:block">
-            {/* Decorative shapes */}
-            <div className="absolute -top-8 -right-8 w-24 h-24 bg-[#ff3d00] rounded-full opacity-60"></div>
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-[#0057ff] rotate-45 opacity-60"></div>
-
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { stat: "24/7", label: "AVAILABILITY", bg: "bg-black", text: "text-white" },
-                { stat: "<3s", label: "RESPONSE", bg: "bg-[#ff3d00]", text: "text-white" },
-                { stat: "98%", label: "ANSWER RATE", bg: "bg-[#0057ff]", text: "text-white" },
-                { stat: "+40%", label: "MORE BOOKINGS", bg: "bg-[#ffcc00]", text: "text-black" },
-              ].map((item) => (
-                <div
-                  key={item.label}
-                  className={`${item.bg} ${item.text} border-4 border-black p-6 shadow-[4px_4px_0px_#000000]`}
-                >
-                  <div className="font-mono text-4xl font-black lg:text-5xl">
-                    {item.stat}
-                  </div>
-                  <div className="mt-2 font-mono text-xs uppercase tracking-wider opacity-80">
-                    {item.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+          {/* Right side - Form (hidden on mobile, shown on desktop) */}
+          <div className="hidden lg:block">
+            <ContactForm />
           </div>
         </div>
       </div>
