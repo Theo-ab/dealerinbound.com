@@ -16,7 +16,14 @@ export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  const totalSteps = 5;
+  const totalSteps = 4;
+
+  const progressPercentage: Record<number, number> = {
+    1: 0,
+    2: 40,
+    3: 80,
+    4: 100,
+  };
 
   const nextStep = () => {
     if (step < totalSteps) setStep(step + 1);
@@ -43,8 +50,6 @@ export default function ContactForm() {
         return formData.dealership.trim() !== "";
       case 4:
         return true; // Optional
-      case 5:
-        return true;
       default:
         return false;
     }
@@ -114,9 +119,17 @@ export default function ContactForm() {
   return (
     <>
       <div className="border-4 border-black bg-white p-5 shadow-[6px_6px_0px_#000000]">
-        {/* Progress Indicator */}
-        <div className="mb-4 text-center font-mono text-xs uppercase tracking-wider text-gray-500">
-          Step {step} of {totalSteps}
+        {/* Progress Bar */}
+        <div className="mb-4">
+          <div className="h-3 w-full border-2 border-black bg-gray-100">
+            <div
+              className="h-full bg-[#0057ff] transition-all duration-300"
+              style={{ width: `${progressPercentage[step]}%` }}
+            />
+          </div>
+          <p className="mt-1 text-center font-mono text-xs font-bold uppercase text-black">
+            {progressPercentage[step]}% done
+          </p>
         </div>
 
         {/* Step 1: Cover */}
@@ -267,35 +280,6 @@ export default function ContactForm() {
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
             />
-            <div className="mt-4 flex gap-2">
-              <button
-                onClick={prevStep}
-                className="flex-1 border-2 border-black bg-white px-3 py-2 font-mono text-xs font-bold uppercase text-black"
-              >
-                Back
-              </button>
-              <button
-                onClick={handleNext}
-                className="flex-1 border-2 border-black bg-black px-3 py-2 font-mono text-xs font-bold uppercase text-white"
-              >
-                Next
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Step 5: Submit */}
-        {step === 5 && (
-          <div className="text-center">
-            <div className="mb-4 inline-block border-4 border-black bg-[#ffcc00] p-3">
-              <svg className="h-8 w-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-black uppercase text-black">Ready!</h3>
-            <p className="mt-2 font-mono text-xs text-gray-600">
-              We'll call {formData.phone} shortly
-            </p>
             <div className="mt-4 flex gap-2">
               <button
                 onClick={prevStep}
