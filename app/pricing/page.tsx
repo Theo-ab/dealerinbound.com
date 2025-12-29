@@ -99,7 +99,7 @@ export default function PricingPage() {
                     <span className="text-5xl font-black">Custom</span>
                   ) : (
                     <>
-                      <span className="text-2xl font-bold">$</span>
+                      <span className="text-2xl font-bold">£</span>
                       <span className="text-5xl font-black">{plan.price}</span>
                       <span className="ml-2 font-mono text-sm opacity-70">/month</span>
                     </>
@@ -157,7 +157,7 @@ export default function PricingPage() {
               },
               {
                 q: "What happens if I exceed my call limit?",
-                a: "We'll notify you when you're approaching your limit. Additional calls are billed at $2/call.",
+                a: "We'll notify you when you're approaching your limit. Additional calls are billed at £2/call.",
               },
               {
                 q: "Can I change plans?",

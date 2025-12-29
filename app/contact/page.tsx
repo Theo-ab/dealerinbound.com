@@ -59,8 +59,20 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-bold uppercase text-black">Phone</div>
-                    <div className="font-mono text-gray-600">(555) 123-4567</div>
+                    <div className="font-bold uppercase text-black">Phone (UK)</div>
+                    <div className="font-mono text-gray-600">+44 7491 957485</div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center border-4 border-black bg-[#ff3d00] shadow-[2px_2px_0px_#000000]">
+                    <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="font-bold uppercase text-black">Phone (USA)</div>
+                    <div className="font-mono text-gray-600">+1 (954) 758-8285</div>
                   </div>
                 </div>
 
