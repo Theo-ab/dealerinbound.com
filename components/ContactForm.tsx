@@ -77,23 +77,23 @@ export default function ContactForm() {
       ) : (
         <form
           onSubmit={handleSubmit}
-          className="border-4 border-black bg-white p-6 shadow-[8px_8px_0px_#000000] lg:p-8"
+          className="border-4 border-black bg-white p-4 shadow-[6px_6px_0px_#000000] md:p-5"
         >
-          <div className="mb-4 border-4 border-[#0057ff] bg-[#e8f0ff] p-3 lg:p-4">
-            <p className="font-mono text-xs text-black lg:text-sm">
-              🚀 <span className="font-bold">Live Demo:</span> Our AI will call you as if you're a car buyer who just inquired about a vehicle
+          <div className="mb-3 border-2 border-[#0057ff] bg-[#e8f0ff] p-2">
+            <p className="font-mono text-xs text-black">
+              🚀 <span className="font-bold">Live Demo:</span> Our AI will call you as a car buyer
             </p>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2 lg:gap-4">
+          <div className="grid gap-2 sm:grid-cols-2">
             <div>
-              <label className="block font-mono text-xs font-bold uppercase text-black lg:text-sm">
+              <label className="block font-mono text-xs font-bold uppercase text-black">
                 Name
               </label>
               <input
                 type="text"
                 required
-                className="mt-1 w-full border-4 border-black bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none lg:mt-2 lg:px-4 lg:py-3"
+                className="mt-1 w-full border-2 border-black bg-[#fffef0] px-2 py-1.5 font-mono text-sm text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none"
                 placeholder="John Smith"
                 value={formData.name}
                 onChange={(e) =>
@@ -103,13 +103,13 @@ export default function ContactForm() {
             </div>
 
             <div>
-              <label className="block font-mono text-xs font-bold uppercase text-black lg:text-sm">
+              <label className="block font-mono text-xs font-bold uppercase text-black">
                 Email
               </label>
               <input
                 type="email"
                 required
-                className="mt-1 w-full border-4 border-black bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none lg:mt-2 lg:px-4 lg:py-3"
+                className="mt-1 w-full border-2 border-black bg-[#fffef0] px-2 py-1.5 font-mono text-sm text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none"
                 placeholder="john@dealership.com"
                 value={formData.email}
                 onChange={(e) =>
@@ -119,13 +119,13 @@ export default function ContactForm() {
             </div>
 
             <div>
-              <label className="block font-mono text-xs font-bold uppercase text-black lg:text-sm">
+              <label className="block font-mono text-xs font-bold uppercase text-black">
                 Dealership
               </label>
               <input
                 type="text"
                 required
-                className="mt-1 w-full border-4 border-black bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none lg:mt-2 lg:px-4 lg:py-3"
+                className="mt-1 w-full border-2 border-black bg-[#fffef0] px-2 py-1.5 font-mono text-sm text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none"
                 placeholder="ABC Motors"
                 value={formData.dealership}
                 onChange={(e) =>
@@ -135,13 +135,13 @@ export default function ContactForm() {
             </div>
 
             <div>
-              <label className="block font-mono text-xs font-bold uppercase text-black lg:text-sm">
+              <label className="block font-mono text-xs font-bold uppercase text-black">
                 Phone *
               </label>
               <input
                 type="tel"
                 required
-                className="mt-1 w-full border-4 border-black bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none lg:mt-2 lg:px-4 lg:py-3"
+                className="mt-1 w-full border-2 border-black bg-[#fffef0] px-2 py-1.5 font-mono text-sm text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none"
                 placeholder="(555) 123-4567"
                 value={formData.phone}
                 onChange={(e) =>
@@ -151,14 +151,14 @@ export default function ContactForm() {
             </div>
           </div>
 
-          <div className="mt-3 lg:mt-4">
-            <label className="block font-mono text-xs font-bold uppercase text-black lg:text-sm">
+          <div className="mt-2">
+            <label className="block font-mono text-xs font-bold uppercase text-black">
               Confirm Phone *
             </label>
             <input
               type="tel"
               required
-              className={`mt-1 w-full border-4 bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-500 focus:outline-none lg:mt-2 lg:px-4 lg:py-3 ${
+              className={`mt-1 w-full border-2 bg-[#fffef0] px-2 py-1.5 font-mono text-sm text-black placeholder-gray-500 focus:outline-none ${
                 formData.confirmPhone && formData.phone !== formData.confirmPhone
                   ? "border-[#ff3d00]"
                   : "border-black focus:border-[#0057ff]"
@@ -174,13 +174,13 @@ export default function ContactForm() {
             )}
           </div>
 
-          <div className="mt-3 lg:mt-4">
-            <label className="block font-mono text-xs font-bold uppercase text-black lg:text-sm">
+          <div className="mt-2">
+            <label className="block font-mono text-xs font-bold uppercase text-black">
               Message (Optional)
             </label>
             <textarea
               rows={2}
-              className="mt-1 w-full border-4 border-black bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none lg:mt-2 lg:px-4 lg:py-3"
+              className="mt-1 w-full border-2 border-black bg-[#fffef0] px-2 py-1.5 font-mono text-sm text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none"
               placeholder="Tell us about your dealership..."
               value={formData.message}
               onChange={(e) =>
@@ -192,7 +192,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={loading}
-            className="brutalist-btn mt-4 w-full border-4 border-black bg-[#ff3d00] px-6 py-3 font-mono text-base font-black uppercase text-white shadow-[4px_4px_0px_#000000] disabled:opacity-50 lg:mt-6 lg:px-8 lg:py-4 lg:text-lg"
+            className="brutalist-btn mt-3 w-full border-4 border-black bg-[#ff3d00] px-4 py-2.5 font-mono text-sm font-black uppercase text-white shadow-[4px_4px_0px_#000000] disabled:opacity-50"
           >
             {loading ? "Sending..." : "Get Your Demo"}
           </button>

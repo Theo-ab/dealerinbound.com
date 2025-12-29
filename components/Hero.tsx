@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="relative bg-[#fffef0] overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 py-12 md:px-8 md:py-16">
-        <div className="grid gap-8 md:grid-cols-[1fr,400px] md:gap-12 items-start">
+        <div className="grid gap-6 md:grid-cols-[1fr,360px] md:gap-10 items-start">
           {/* Left side - Content */}
           <div className="md:py-8">
             <div className="mb-6 inline-block border-4 border-black bg-[#ffcc00] px-4 py-2 font-mono text-sm uppercase tracking-wider shadow-[4px_4px_0px_#000000]">
@@ -55,7 +55,7 @@ export default function Hero() {
           </div>
 
           {/* Right side - Form */}
-          <div>
+          <div className="w-full max-w-sm md:max-w-none md:w-auto">
             <ContactForm />
           </div>
         </div>
