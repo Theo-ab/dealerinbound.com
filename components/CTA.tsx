@@ -253,7 +253,7 @@ export default function CTA() {
             </div>
             <h3 className="text-2xl font-black uppercase text-black">Ready for your demo?</h3>
             <p className="mt-3 font-mono text-gray-700">
-              You're about to receive a demo call. Our AI will play the role of a customer inquiring about buying a car from your dealership.
+              Our AI will call you as if you're a car buyer who just inquired about a vehicle. Experience how we handle your customers!
             </p>
             <div className="mt-6 flex gap-3">
               <button
