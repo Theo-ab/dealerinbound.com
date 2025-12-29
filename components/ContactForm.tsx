@@ -16,7 +16,7 @@ export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  const totalSteps = 7;
+  const totalSteps = 5;
 
   const nextStep = () => {
     if (step < totalSteps) setStep(step + 1);
@@ -31,20 +31,19 @@ export default function ContactForm() {
       case 1:
         return true;
       case 2:
-        return formData.name.trim() !== "";
-      case 3:
-        return formData.email.trim() !== "" && formData.email.includes("@");
-      case 4:
-        return formData.dealership.trim() !== "";
-      case 5:
         return (
+          formData.name.trim() !== "" &&
+          formData.email.trim() !== "" &&
+          formData.email.includes("@") &&
           formData.phone.trim() !== "" &&
           formData.confirmPhone.trim() !== "" &&
           formData.phone === formData.confirmPhone
         );
-      case 6:
+      case 3:
+        return formData.dealership.trim() !== "";
+      case 4:
         return true; // Optional
-      case 7:
+      case 5:
         return true;
       default:
         return false;
@@ -141,21 +140,67 @@ export default function ContactForm() {
           </div>
         )}
 
-        {/* Step 2: Name */}
+        {/* Step 2: Contact Info */}
         {step === 2 && (
           <div>
-            <label className="block font-mono text-xs font-bold uppercase text-black">
-              What's your name?
-            </label>
-            <input
-              type="text"
-              autoFocus
-              className="mt-2 w-full border-2 border-black bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none"
-              placeholder="John Smith"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              onKeyDown={(e) => e.key === "Enter" && handleNext()}
-            />
+            <div className="space-y-3">
+              <div>
+                <label className="block font-mono text-xs font-bold uppercase text-black">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  autoFocus
+                  className="mt-1 w-full border-2 border-black bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none"
+                  placeholder="John Smith"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                />
+              </div>
+              <div>
+                <label className="block font-mono text-xs font-bold uppercase text-black">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  className="mt-1 w-full border-2 border-black bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none"
+                  placeholder="john@dealership.com"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                />
+              </div>
+              <div>
+                <label className="block font-mono text-xs font-bold uppercase text-black">
+                  Phone
+                </label>
+                <input
+                  type="tel"
+                  className="mt-1 w-full border-2 border-black bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none"
+                  placeholder="(555) 123-4567"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                />
+              </div>
+              <div>
+                <label className="block font-mono text-xs font-bold uppercase text-black">
+                  Confirm Phone
+                </label>
+                <input
+                  type="tel"
+                  className={`mt-1 w-full border-2 bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-500 focus:outline-none ${
+                    formData.confirmPhone && formData.phone !== formData.confirmPhone
+                      ? "border-[#ff3d00]"
+                      : "border-black focus:border-[#0057ff]"
+                  }`}
+                  placeholder="(555) 123-4567"
+                  value={formData.confirmPhone}
+                  onChange={(e) => setFormData({ ...formData, confirmPhone: e.target.value })}
+                />
+                {formData.confirmPhone && formData.phone !== formData.confirmPhone && (
+                  <p className="mt-1 font-mono text-xs text-[#ff3d00]">Phone numbers don't match</p>
+                )}
+              </div>
+            </div>
             <div className="mt-4 flex gap-2">
               <button
                 onClick={prevStep}
@@ -174,41 +219,8 @@ export default function ContactForm() {
           </div>
         )}
 
-        {/* Step 3: Email */}
+        {/* Step 3: Dealership */}
         {step === 3 && (
-          <div>
-            <label className="block font-mono text-xs font-bold uppercase text-black">
-              Your email address?
-            </label>
-            <input
-              type="email"
-              autoFocus
-              className="mt-2 w-full border-2 border-black bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none"
-              placeholder="john@dealership.com"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              onKeyDown={(e) => e.key === "Enter" && handleNext()}
-            />
-            <div className="mt-4 flex gap-2">
-              <button
-                onClick={prevStep}
-                className="flex-1 border-2 border-black bg-white px-3 py-2 font-mono text-xs font-bold uppercase text-black"
-              >
-                Back
-              </button>
-              <button
-                onClick={handleNext}
-                disabled={!canProceed()}
-                className="flex-1 border-2 border-black bg-black px-3 py-2 font-mono text-xs font-bold uppercase text-white disabled:opacity-50"
-              >
-                Next
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Step 4: Dealership */}
-        {step === 4 && (
           <div>
             <label className="block font-mono text-xs font-bold uppercase text-black">
               Your dealership name?
@@ -240,58 +252,8 @@ export default function ContactForm() {
           </div>
         )}
 
-        {/* Step 5: Phone */}
-        {step === 5 && (
-          <div>
-            <label className="block font-mono text-xs font-bold uppercase text-black">
-              Your phone number?
-            </label>
-            <input
-              type="tel"
-              autoFocus
-              className="mt-2 w-full border-2 border-black bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none"
-              placeholder="(555) 123-4567"
-              value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            />
-            <label className="mt-3 block font-mono text-xs font-bold uppercase text-black">
-              Confirm phone number
-            </label>
-            <input
-              type="tel"
-              className={`mt-2 w-full border-2 bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-500 focus:outline-none ${
-                formData.confirmPhone && formData.phone !== formData.confirmPhone
-                  ? "border-[#ff3d00]"
-                  : "border-black focus:border-[#0057ff]"
-              }`}
-              placeholder="(555) 123-4567"
-              value={formData.confirmPhone}
-              onChange={(e) => setFormData({ ...formData, confirmPhone: e.target.value })}
-              onKeyDown={(e) => e.key === "Enter" && handleNext()}
-            />
-            {formData.confirmPhone && formData.phone !== formData.confirmPhone && (
-              <p className="mt-1 font-mono text-xs text-[#ff3d00]">Phone numbers don't match</p>
-            )}
-            <div className="mt-4 flex gap-2">
-              <button
-                onClick={prevStep}
-                className="flex-1 border-2 border-black bg-white px-3 py-2 font-mono text-xs font-bold uppercase text-black"
-              >
-                Back
-              </button>
-              <button
-                onClick={handleNext}
-                disabled={!canProceed()}
-                className="flex-1 border-2 border-black bg-black px-3 py-2 font-mono text-xs font-bold uppercase text-white disabled:opacity-50"
-              >
-                Next
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Step 6: Message */}
-        {step === 6 && (
+        {/* Step 4: Message */}
+        {step === 4 && (
           <div>
             <label className="block font-mono text-xs font-bold uppercase text-black">
               Any message? (Optional)
@@ -321,8 +283,8 @@ export default function ContactForm() {
           </div>
         )}
 
-        {/* Step 7: Submit */}
-        {step === 7 && (
+        {/* Step 5: Submit */}
+        {step === 5 && (
           <div className="text-center">
             <div className="mb-4 inline-block border-4 border-black bg-[#ffcc00] p-3">
               <svg className="h-8 w-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
