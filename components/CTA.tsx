@@ -8,6 +8,7 @@ export default function CTA() {
     email: "",
     dealership: "",
     phone: "",
+    confirmPhone: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -15,6 +16,11 @@ export default function CTA() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (formData.phone !== formData.confirmPhone) {
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -104,8 +110,13 @@ export default function CTA() {
                 onSubmit={handleSubmit}
                 className="border-4 border-white bg-white p-8 shadow-[8px_8px_0px_#ff3d00]"
               >
-                <div className="mb-6 inline-block border-4 border-black bg-[#0057ff] px-4 py-2 font-mono text-sm uppercase tracking-wider text-white">
+                <div className="mb-4 inline-block border-4 border-black bg-[#0057ff] px-4 py-2 font-mono text-sm uppercase tracking-wider text-white">
                   Book Demo
+                </div>
+                <div className="mb-6 border-4 border-[#ff3d00] bg-[#fff3cd] p-4">
+                  <p className="font-mono text-sm font-bold text-black">
+                    ⚠️ IMPORTANT: After submitting, our AI agent will call you and simulate a real customer inquiry — as if you're trying to buy a car. This is your live demo!
+                  </p>
                 </div>
 
                 <div className="grid gap-4 sm:grid-cols-2">
@@ -159,10 +170,11 @@ export default function CTA() {
 
                   <div>
                     <label className="block font-mono text-sm font-bold uppercase text-black">
-                      Phone
+                      Phone *
                     </label>
                     <input
                       type="tel"
+                      required
                       className="mt-2 w-full border-4 border-black bg-[#fffef0] px-4 py-3 font-mono text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none"
                       placeholder="(555) 123-4567"
                       value={formData.phone}
@@ -171,6 +183,29 @@ export default function CTA() {
                       }
                     />
                   </div>
+                </div>
+
+                <div className="mt-4">
+                  <label className="block font-mono text-sm font-bold uppercase text-black">
+                    Confirm Phone *
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    className={`mt-2 w-full border-4 bg-[#fffef0] px-4 py-3 font-mono text-black placeholder-gray-500 focus:outline-none ${
+                      formData.confirmPhone && formData.phone !== formData.confirmPhone
+                        ? "border-[#ff3d00]"
+                        : "border-black focus:border-[#0057ff]"
+                    }`}
+                    placeholder="(555) 123-4567"
+                    value={formData.confirmPhone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, confirmPhone: e.target.value })
+                    }
+                  />
+                  {formData.confirmPhone && formData.phone !== formData.confirmPhone && (
+                    <p className="mt-1 font-mono text-xs text-[#ff3d00]">Phone numbers don't match</p>
+                  )}
                 </div>
 
                 <div className="mt-4">
