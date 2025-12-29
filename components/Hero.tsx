@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
     <section className="relative bg-[#fffef0] overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           {/* Left side - Content */}
           <div>
@@ -23,7 +23,7 @@ export default function Hero() {
               and book appointments — automatically, 24/7.
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-10 hidden flex-col gap-4 sm:flex-row lg:flex">
               <a
                 href="#contact"
                 className="brutalist-btn inline-flex items-center justify-center border-4 border-black bg-[#ff3d00] px-8 py-4 text-lg font-bold uppercase text-white shadow-[4px_4px_0px_#000000]"

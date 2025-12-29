@@ -49,8 +49,14 @@ export default function CTA() {
   };
 
   return (
-    <section id="contact" className="bg-[#fffef0] py-12 lg:py-24">
+    <section id="contact" className="bg-[#fffef0] pb-12 lg:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Mobile heading */}
+        <div className="mb-6 text-center lg:hidden">
+          <h2 className="text-3xl font-black uppercase text-black">
+            Book Your <span className="inline-block border-4 border-black bg-[#ff3d00] px-2 text-white">Demo</span>
+          </h2>
+        </div>
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           {/* Left side - Message (hidden on mobile) */}
           <div className="hidden lg:block">
@@ -116,7 +122,7 @@ export default function CTA() {
                 onSubmit={handleSubmit}
                 className="border-4 border-black bg-white p-8 shadow-[8px_8px_0px_#000000]"
               >
-                <div className="mb-4 inline-block border-4 border-black bg-[#0057ff] px-4 py-2 font-mono text-sm uppercase tracking-wider text-white">
+                <div className="mb-4 hidden border-4 border-black bg-[#0057ff] px-4 py-2 font-mono text-sm uppercase tracking-wider text-white lg:inline-block">
                   Book Demo
                 </div>
                 <div className="mb-6 border-4 border-[#0057ff] bg-[#e8f0ff] p-4">
