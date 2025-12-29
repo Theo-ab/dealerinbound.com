@@ -14,7 +14,6 @@ export default function ContactForm() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [showModal, setShowModal] = useState(false);
 
   const totalSteps = 4;
 
@@ -22,7 +21,7 @@ export default function ContactForm() {
     1: 0,
     2: 40,
     3: 80,
-    4: 100,
+    4: 90,
   };
 
   const nextStep = () => {
@@ -61,12 +60,7 @@ export default function ContactForm() {
     }
   };
 
-  const handleSubmit = () => {
-    setShowModal(true);
-  };
-
-  const confirmSubmit = async () => {
-    setShowModal(false);
+  const handleSubmit = async () => {
     setLoading(true);
 
     try {
@@ -90,27 +84,17 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="border-4 border-black bg-[#ffcc00] p-6 shadow-[6px_6px_0px_#000000]">
-        <div className="mb-4 inline-block border-4 border-black bg-black p-3">
-          <svg
-            className="h-6 w-6 text-white"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={3}
-              d="M5 13l4 4L19 7"
-            />
+      <div className="border-4 border-black bg-white p-6 shadow-[8px_8px_0px_#ff3d00]">
+        <div className="mb-4 inline-block border-4 border-black bg-[#0057ff] p-3">
+          <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
           </svg>
         </div>
         <h3 className="text-xl font-black uppercase text-black">Get Ready!</h3>
-        <p className="mt-2 font-mono text-sm text-black">
+        <p className="mt-3 font-mono text-sm text-gray-700">
           Our AI will call you within the next 30 seconds.
           <br /><br />
-          Remember, you're buying the car for this demo — you get a break from selling!
+          Remember, in the demo it's as if you're buying the car... you get a break from selling!
         </p>
       </div>
     );
@@ -298,37 +282,6 @@ export default function ContactForm() {
           </div>
         )}
       </div>
-
-      {/* Confirmation Modal */}
-      {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
-          <div className="w-full max-w-sm border-4 border-black bg-white p-6 shadow-[8px_8px_0px_#ff3d00]">
-            <div className="mb-4 inline-block border-4 border-black bg-[#0057ff] p-3">
-              <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-black uppercase text-black">Ready for your demo?</h3>
-            <p className="mt-3 font-mono text-sm text-gray-700">
-              Remember, you're buying the car for this demo — you get a break from selling!
-            </p>
-            <div className="mt-5 flex gap-3">
-              <button
-                onClick={() => setShowModal(false)}
-                className="flex-1 border-2 border-black bg-white px-3 py-2 font-mono text-xs font-bold uppercase text-black"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={confirmSubmit}
-                className="flex-1 border-4 border-black bg-[#ff3d00] px-3 py-2 font-mono text-xs font-black uppercase text-white shadow-[4px_4px_0px_#000000]"
-              >
-                Call Me
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }
