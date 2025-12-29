@@ -144,7 +144,7 @@ export default function ContactPage() {
                   </div>
                   <div className="mb-6 border-4 border-[#0057ff] bg-[#e8f0ff] p-4">
                     <p className="font-mono text-sm text-black">
-                      🚀 <span className="font-bold">Live Demo:</span> Our AI will call you as a car buyer
+                      🚀 <span className="font-bold">Live Demo:</span> Our AI will call you as if you're a car buyer who just inquired about a vehicle
                     </p>
                   </div>
 
