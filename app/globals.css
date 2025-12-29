@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fffef0;
+  --foreground: #000000;
+  --primary: #ff3d00;
+  --secondary: #0057ff;
+  --accent: #ffcc00;
+  --brutalist-shadow: 4px 4px 0px #000000;
+  --brutalist-shadow-lg: 8px 8px 0px #000000;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Brutalist button hover effect */
+.brutalist-btn {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.brutalist-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000000;
+}
+
+.brutalist-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000000;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
