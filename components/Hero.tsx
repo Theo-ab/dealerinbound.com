@@ -3,10 +3,10 @@ import ContactForm from "./ContactForm";
 export default function Hero() {
   return (
     <section className="relative bg-[#fffef0] overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 py-12 md:px-8 md:py-16">
-        <div className="grid gap-6 md:grid-cols-[1fr,360px] md:gap-10 items-start">
+      <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-16">
+        <div className="flex flex-col sm:flex-row sm:gap-8 gap-6 items-start">
           {/* Left side - Content */}
-          <div className="md:py-8">
+          <div className="flex-1 sm:py-4">
             <div className="mb-6 inline-block border-4 border-black bg-[#ffcc00] px-4 py-2 font-mono text-sm uppercase tracking-wider shadow-[4px_4px_0px_#000000]">
               For Automotive Dealerships
             </div>
@@ -25,7 +25,7 @@ export default function Hero() {
               and book appointments — automatically, 24/7.
             </p>
 
-            <div className="mt-10 hidden flex-col gap-4 sm:flex-row md:flex">
+            <div className="mt-8 hidden flex-col gap-4 sm:flex sm:flex-row">
               <a
                 href="#contact"
                 className="brutalist-btn inline-flex items-center justify-center border-4 border-black bg-[#ff3d00] px-8 py-4 text-lg font-bold uppercase text-white shadow-[4px_4px_0px_#000000]"
@@ -55,7 +55,7 @@ export default function Hero() {
           </div>
 
           {/* Right side - Form */}
-          <div className="w-full max-w-sm md:max-w-none md:w-auto">
+          <div className="w-full sm:w-80 sm:flex-shrink-0">
             <ContactForm />
           </div>
         </div>
