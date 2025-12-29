@@ -129,9 +129,9 @@ export default function ContactPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-black uppercase text-black">Message Sent!</h3>
+                  <h3 className="text-2xl font-black uppercase text-black">Get Ready!</h3>
                   <p className="mt-3 font-mono text-black">
-                    We'll get back to you within 24 hours.
+                    Our AI will call you within the next 30 seconds. Answer the phone!
                   </p>
                 </div>
               ) : (

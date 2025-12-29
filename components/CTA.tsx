@@ -105,10 +105,10 @@ export default function CTA() {
                   </svg>
                 </div>
                 <h3 className="text-2xl font-black uppercase text-black">
-                  Request Received!
+                  Get Ready!
                 </h3>
                 <p className="mt-3 font-mono text-black">
-                  We'll contact you within 24 hours to schedule your demo.
+                  Our AI will call you within the next 30 seconds. Answer the phone!
                 </p>
               </div>
             ) : (
