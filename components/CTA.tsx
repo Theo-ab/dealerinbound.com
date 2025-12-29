@@ -20,28 +20,37 @@ export default function CTA() {
   return (
     <section id="contact" className="bg-black py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           {/* Left side - Message */}
-          <div className="flex flex-col justify-center">
-            <h2 className="text-5xl font-black uppercase leading-tight text-white sm:text-7xl">
-              Stop
-              <br />
-              <span className="inline-block border-4 border-white bg-[#ff3d00] px-3">
-                Missing
+          <div>
+            <div className="inline-block border-4 border-white bg-[#ff3d00] px-4 py-2 font-mono text-sm uppercase tracking-wider text-white shadow-[4px_4px_0px_#ffcc00]">
+              Get Started
+            </div>
+            <h2 className="mt-6 text-5xl font-black uppercase leading-tight text-white sm:text-6xl">
+              Stop Missing{" "}
+              <span className="inline-block border-4 border-white bg-[#0057ff] px-3">
+                Calls
               </span>
-              <br />
-              Calls
             </h2>
-            <p className="mt-8 max-w-md border-l-4 border-[#ffcc00] pl-6 font-mono text-lg text-gray-300">
+            <p className="mt-6 max-w-md border-l-4 border-[#ffcc00] pl-6 font-mono text-lg text-gray-300">
               Every missed call is a missed sale. Book a demo and see
               DealerInbound in action.
             </p>
 
-            {/* Decorative elements */}
-            <div className="mt-12 flex gap-4">
-              <div className="h-16 w-16 border-4 border-white bg-[#ff3d00]"></div>
-              <div className="h-16 w-16 border-4 border-white bg-[#0057ff]"></div>
-              <div className="h-16 w-16 border-4 border-white bg-[#ffcc00]"></div>
+            {/* Stats reminder */}
+            <div className="mt-10 flex gap-4">
+              <div className="border-4 border-white bg-[#ff3d00] p-4">
+                <div className="font-mono text-2xl font-black text-white">98%</div>
+                <div className="font-mono text-xs uppercase text-white/80">Answer Rate</div>
+              </div>
+              <div className="border-4 border-white bg-[#0057ff] p-4">
+                <div className="font-mono text-2xl font-black text-white">+40%</div>
+                <div className="font-mono text-xs uppercase text-white/80">More Bookings</div>
+              </div>
+              <div className="border-4 border-white bg-[#ffcc00] p-4">
+                <div className="font-mono text-2xl font-black text-black">24/7</div>
+                <div className="font-mono text-xs uppercase text-black/80">Always On</div>
+              </div>
             </div>
           </div>
 
@@ -80,7 +89,7 @@ export default function CTA() {
                   Book Demo
                 </div>
 
-                <div className="space-y-4">
+                <div className="grid gap-4 sm:grid-cols-2">
                   <div>
                     <label className="block font-mono text-sm font-bold uppercase text-black">
                       Name
@@ -147,9 +156,9 @@ export default function CTA() {
 
                 <button
                   type="submit"
-                  className="brutalist-btn mt-6 w-full border-4 border-black bg-[#ff3d00] px-8 py-4 font-mono text-xl font-black uppercase text-white shadow-[4px_4px_0px_#000000]"
+                  className="brutalist-btn mt-6 w-full border-4 border-black bg-[#ff3d00] px-8 py-4 font-mono text-lg font-black uppercase text-white shadow-[4px_4px_0px_#000000]"
                 >
-                  Get Demo
+                  Get Your Demo
                 </button>
               </form>
             )}
