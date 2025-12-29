@@ -3,10 +3,10 @@ import ContactForm from "./ContactForm";
 export default function Hero() {
   return (
     <section className="relative bg-[#fffef0] overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-24">
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
+      <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
+        <div className="grid gap-8 lg:grid-cols-[1fr,480px] lg:gap-16 items-start">
           {/* Left side - Content */}
-          <div>
+          <div className="lg:py-8">
             <div className="mb-6 inline-block border-4 border-black bg-[#ffcc00] px-4 py-2 font-mono text-sm uppercase tracking-wider shadow-[4px_4px_0px_#000000]">
               For Automotive Dealerships
             </div>
