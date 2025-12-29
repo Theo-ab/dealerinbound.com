@@ -3,10 +3,10 @@ import ContactForm from "./ContactForm";
 export default function Hero() {
   return (
     <section className="relative bg-[#fffef0] overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
-        <div className="grid gap-8 lg:grid-cols-[1fr,480px] lg:gap-16 items-start">
+      <div className="mx-auto max-w-7xl px-6 py-12 md:px-8 md:py-16">
+        <div className="grid gap-8 md:grid-cols-[1fr,400px] md:gap-12 items-start">
           {/* Left side - Content */}
-          <div className="lg:py-8">
+          <div className="md:py-8">
             <div className="mb-6 inline-block border-4 border-black bg-[#ffcc00] px-4 py-2 font-mono text-sm uppercase tracking-wider shadow-[4px_4px_0px_#000000]">
               For Automotive Dealerships
             </div>
@@ -25,7 +25,7 @@ export default function Hero() {
               and book appointments — automatically, 24/7.
             </p>
 
-            <div className="mt-10 hidden flex-col gap-4 sm:flex-row lg:flex">
+            <div className="mt-10 hidden flex-col gap-4 sm:flex-row md:flex">
               <a
                 href="#contact"
                 className="brutalist-btn inline-flex items-center justify-center border-4 border-black bg-[#ff3d00] px-8 py-4 text-lg font-bold uppercase text-white shadow-[4px_4px_0px_#000000]"
