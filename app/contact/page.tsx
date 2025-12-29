@@ -13,14 +13,20 @@ export default function ContactPage() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (formData.phone !== formData.confirmPhone) {
       return;
     }
 
+    setShowModal(true);
+  };
+
+  const confirmSubmit = async () => {
+    setShowModal(false);
     setLoading(true);
 
     try {
@@ -136,9 +142,9 @@ export default function ContactPage() {
                   <div className="mb-4 inline-block border-4 border-black bg-[#0057ff] px-4 py-2 font-mono text-sm uppercase tracking-wider text-white">
                     Book Demo
                   </div>
-                  <div className="mb-6 border-4 border-[#ff3d00] bg-[#fff3cd] p-4">
-                    <p className="font-mono text-sm font-bold text-black">
-                      ⚠️ IMPORTANT: After submitting, our AI agent will call you and simulate a real customer inquiry — as if you're trying to buy a car. This is your live demo!
+                  <div className="mb-6 border-4 border-[#0057ff] bg-[#e8f0ff] p-4">
+                    <p className="font-mono text-sm text-black">
+                      🚀 <span className="font-bold">Live Demo:</span> Our AI will call you as a car buyer
                     </p>
                   </div>
 
@@ -249,6 +255,37 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* Confirmation Modal */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
+          <div className="w-full max-w-md border-4 border-black bg-white p-8 shadow-[8px_8px_0px_#ff3d00]">
+            <div className="mb-4 inline-block border-4 border-black bg-[#0057ff] p-3">
+              <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-black uppercase text-black">Ready for your demo?</h3>
+            <p className="mt-3 font-mono text-gray-700">
+              You're about to receive a call from our AI agent. It will act as a customer looking to buy a car.
+            </p>
+            <div className="mt-6 flex gap-3">
+              <button
+                onClick={() => setShowModal(false)}
+                className="flex-1 border-4 border-black bg-white px-4 py-3 font-mono font-bold uppercase text-black shadow-[4px_4px_0px_#000000] transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_#000000]"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={confirmSubmit}
+                className="flex-1 border-4 border-black bg-[#ff3d00] px-4 py-3 font-mono font-bold uppercase text-white shadow-[4px_4px_0px_#000000] transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_#000000]"
+              >
+                Call Me
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
