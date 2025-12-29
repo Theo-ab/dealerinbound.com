@@ -54,8 +54,8 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right side - Form (hidden on mobile, shown on desktop) */}
-          <div className="hidden lg:block">
+          {/* Right side - Form */}
+          <div>
             <ContactForm />
           </div>
         </div>
