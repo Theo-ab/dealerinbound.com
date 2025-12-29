@@ -22,11 +22,11 @@ export async function POST(request: NextRequest) {
           submissions: [
             {
               questions: [
-                { id: "name", value: name },
-                { id: "email", value: email },
-                { id: "dealership", value: dealership },
-                { id: "phone", value: phone || "" },
-                { id: "message", value: message || "" },
+                { id: "ewBX", value: name },
+                { id: "vkpB", value: email },
+                { id: "8SMG", value: dealership },
+                { id: "hNnB", value: phone || "" },
+                { id: "7F28", value: message || "" },
               ],
             },
           ],
