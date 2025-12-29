@@ -1,17 +1,6 @@
 export default function Hero() {
   return (
     <section className="relative bg-[#fffef0] overflow-hidden">
-      {/* Marquee banner */}
-      <div className="bg-black text-white py-3 overflow-hidden border-b-4 border-[#ffcc00]">
-        <div className="animate-marquee whitespace-nowrap flex">
-          {[...Array(10)].map((_, i) => (
-            <span key={i} className="mx-8 text-sm font-mono uppercase tracking-widest">
-              24/7 AI CALL HANDLING — NEVER MISS A LEAD — BOOK MORE APPOINTMENTS —
-            </span>
-          ))}
-        </div>
-      </div>
-
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           {/* Left side - Content */}
