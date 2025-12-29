@@ -131,7 +131,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-2xl font-black uppercase text-black">Get Ready!</h3>
                   <p className="mt-3 font-mono text-black">
-                    Our AI will call you within the next 30 seconds. Remember, you're buying the car for this demo — you get a break from selling!
+                    Our AI will call you within the next 30 seconds.<br /><br />Remember, you're buying the car for this demo — you get a break from selling!
                   </p>
                 </div>
               ) : (
