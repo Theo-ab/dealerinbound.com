@@ -149,7 +149,7 @@ export default function ContactForm() {
                 <input
                   type="text"
                   autoFocus
-                  className="mt-1 w-full border-2 border-black bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-400 focus:border-[#0057ff] focus:outline-none"
+                  className="mt-1 w-full border-2 border-black bg-[#fffef0] px-3 py-2 font-mono text-base text-black placeholder-gray-400 focus:border-[#0057ff] focus:outline-none"
                   placeholder="John Smith"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -161,7 +161,7 @@ export default function ContactForm() {
                 </label>
                 <input
                   type="email"
-                  className="mt-1 w-full border-2 border-black bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-400 focus:border-[#ff3d00] focus:outline-none"
+                  className="mt-1 w-full border-2 border-black bg-[#fffef0] px-3 py-2 font-mono text-base text-black placeholder-gray-400 focus:border-[#ff3d00] focus:outline-none"
                   placeholder="john@dealership.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -173,7 +173,7 @@ export default function ContactForm() {
                 </label>
                 <input
                   type="tel"
-                  className="mt-1 w-full border-2 border-black bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-400 focus:border-[#ffcc00] focus:outline-none"
+                  className="mt-1 w-full border-2 border-black bg-[#fffef0] px-3 py-2 font-mono text-base text-black placeholder-gray-400 focus:border-[#ffcc00] focus:outline-none"
                   placeholder="(555) 123-4567"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -185,7 +185,7 @@ export default function ContactForm() {
                 </label>
                 <input
                   type="tel"
-                  className={`mt-1 w-full border-2 bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-400 focus:outline-none ${
+                  className={`mt-1 w-full border-2 bg-[#fffef0] px-3 py-2 font-mono text-base text-black placeholder-gray-400 focus:outline-none ${
                     formData.confirmPhone && formData.phone !== formData.confirmPhone
                       ? "border-[#ff3d00]"
                       : "border-black focus:border-[#0057ff]"
@@ -226,7 +226,7 @@ export default function ContactForm() {
             <input
               type="text"
               autoFocus
-              className="mt-2 w-full border-2 border-black bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none"
+              className="mt-2 w-full border-2 border-black bg-[#fffef0] px-3 py-2 font-mono text-base text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none"
               placeholder="ABC Motors"
               value={formData.dealership}
               onChange={(e) => setFormData({ ...formData, dealership: e.target.value })}
@@ -259,7 +259,7 @@ export default function ContactForm() {
             <textarea
               autoFocus
               rows={3}
-              className="mt-2 w-full border-2 border-black bg-[#fffef0] px-3 py-2 font-mono text-sm text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none"
+              className="mt-2 w-full border-2 border-black bg-[#fffef0] px-3 py-2 font-mono text-base text-black placeholder-gray-500 focus:border-[#0057ff] focus:outline-none"
               placeholder="Tell us about your dealership..."
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
