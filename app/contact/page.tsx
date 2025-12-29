@@ -267,7 +267,7 @@ export default function ContactPage() {
             </div>
             <h3 className="text-2xl font-black uppercase text-black">Ready for your demo?</h3>
             <p className="mt-3 font-mono text-gray-700">
-              You're about to receive a call from our AI agent. It will act as a customer looking to buy a car.
+              You're about to receive a demo call. Our AI will play the role of a customer inquiring about buying a car from your dealership.
             </p>
             <div className="mt-6 flex gap-3">
               <button
