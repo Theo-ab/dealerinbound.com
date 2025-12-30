@@ -3,15 +3,15 @@ import ContactForm from "./ContactForm";
 export default function Hero() {
   return (
     <section className="relative bg-[#fffef0] overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-16">
-        <div className="flex flex-col sm:flex-row sm:gap-8 gap-6 items-start">
-          {/* Left side - Content */}
-          <div className="flex-1 sm:py-4">
+      <div className="mx-auto max-w-7xl px-6 py-10 md:px-8 md:py-12 lg:py-16">
+        <div className="flex flex-col md:flex-row md:gap-8 gap-6 items-start">
+          {/* Left side - Content (60%) */}
+          <div className="w-full md:w-[60%] md:py-4">
             <div className="mb-6 inline-block border-4 border-black bg-[#ffcc00] px-4 py-2 font-mono text-sm uppercase tracking-wider shadow-[4px_4px_0px_#000000]">
               For Automotive Dealerships
             </div>
 
-            <h1 className="text-5xl font-black uppercase leading-[0.9] tracking-tight text-black sm:text-6xl lg:text-7xl">
+            <h1 className="text-4xl font-black uppercase leading-[0.9] tracking-tight text-black md:text-5xl lg:text-6xl">
               Never Miss
               <br />
               Another{" "}
@@ -20,19 +20,19 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p className="mt-8 max-w-lg border-l-4 border-black pl-6 text-lg leading-relaxed text-black">
+            <p className="mt-6 max-w-lg border-l-4 border-black pl-6 text-base leading-relaxed text-black lg:text-lg">
               AI-powered inbound operations that answer calls, qualify customers,
               and book appointments — automatically, 24/7.
             </p>
 
-            <div className="mt-8 hidden flex-col gap-4 sm:flex sm:flex-row">
+            <div className="mt-6 hidden flex-col gap-3 md:flex md:flex-row">
               <a
                 href="#contact"
-                className="brutalist-btn inline-flex items-center justify-center border-4 border-black bg-[#ff3d00] px-8 py-4 text-lg font-bold uppercase text-white shadow-[4px_4px_0px_#000000]"
+                className="brutalist-btn inline-flex items-center justify-center border-4 border-black bg-[#ff3d00] px-6 py-3 text-sm font-bold uppercase text-white shadow-[4px_4px_0px_#000000] lg:px-8 lg:py-4 lg:text-base"
               >
                 Book a Demo
                 <svg
-                  className="ml-3 h-5 w-5"
+                  className="ml-2 h-4 w-4 lg:ml-3 lg:h-5 lg:w-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -47,15 +47,15 @@ export default function Hero() {
               </a>
               <a
                 href="#how-it-works"
-                className="brutalist-btn inline-flex items-center justify-center border-4 border-black bg-white px-8 py-4 text-lg font-bold uppercase text-black shadow-[4px_4px_0px_#000000]"
+                className="brutalist-btn inline-flex items-center justify-center border-4 border-black bg-white px-6 py-3 text-sm font-bold uppercase text-black shadow-[4px_4px_0px_#000000] lg:px-8 lg:py-4 lg:text-base"
               >
                 How It Works
               </a>
             </div>
           </div>
 
-          {/* Right side - Form */}
-          <div className="w-full sm:w-96 lg:w-[420px] sm:flex-shrink-0">
+          {/* Right side - Form (40%) */}
+          <div className="w-full md:w-[40%] md:py-4">
             <ContactForm />
           </div>
         </div>
