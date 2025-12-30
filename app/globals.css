@@ -1,6 +1,17 @@
 @import "tailwindcss";
 
+/* Reset defaults */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
+  --spacing: 8px;
   --background: #fffef0;
   --foreground: #000000;
   --primary: #ff3d00;
@@ -21,7 +32,6 @@
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }

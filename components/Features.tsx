@@ -39,8 +39,8 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="bg-white border-y-4 border-black py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="features" className="bg-white rounded-[18px] py-24 overflow-hidden">
+      <div className="px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left side - Header */}
           <div className="lg:col-span-4">

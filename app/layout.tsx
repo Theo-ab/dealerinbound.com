@@ -35,16 +35,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth bg-black">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{ backgroundColor: '#000000', margin: 0, padding: 0 }}
       >
-        <div className="sticky top-0 z-50">
-          <TopBanner />
-          <Header />
+        <div style={{ margin: '8px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          <div className="sticky z-50 rounded-[18px] overflow-hidden bg-white" style={{ top: '8px' }}>
+            <TopBanner />
+            <Header />
+          </div>
+          {children}
+          <Footer />
         </div>
-        {children}
-        <Footer />
       </body>
     </html>
   );

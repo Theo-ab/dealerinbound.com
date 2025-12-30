@@ -233,7 +233,7 @@ export default function ContactForm() {
       {/* Step 2: Name + Phone only */}
       {step === 2 && (
         <div>
-          <h3 className="mb-4 text-center text-sm font-black uppercase text-black">Quick Info</h3>
+          <h3 className="mb-4 text-center text-sm font-black uppercase text-black">Enter your info and our AI will call you</h3>
           <div className="space-y-3">
             <div className="border-l-4 border-[#0057ff] pl-3">
               <label className="block font-mono text-xs font-bold uppercase text-[#0057ff]">

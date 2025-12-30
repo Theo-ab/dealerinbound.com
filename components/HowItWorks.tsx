@@ -21,8 +21,8 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-[#fffef0] py-24 border-t-4 border-black">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="how-it-works" className="bg-[#fffef0] rounded-[18px] py-24 overflow-hidden">
+      <div className="px-6 lg:px-8">
         <div className="mb-16">
           <div className="inline-block border-4 border-black bg-black px-4 py-2 font-mono text-sm uppercase tracking-wider text-white shadow-[4px_4px_0px_#ff3d00]">
             Process

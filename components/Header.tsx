@@ -16,14 +16,14 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="border-b-4 border-black bg-[#fffef0]">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+    <header className="bg-white">
+      <div className="px-4 md:px-6">
+        <div className="flex h-14 md:h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="flex h-10 w-10 items-center justify-center border-4 border-black bg-[#ff3d00] shadow-[2px_2px_0px_#000000] transition-all group-hover:shadow-[4px_4px_0px_#000000] group-hover:translate-x-[-2px] group-hover:translate-y-[-2px]">
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="flex h-8 w-8 md:h-9 md:w-9 items-center justify-center border-3 border-black bg-[#ff3d00] shadow-[2px_2px_0px_#000000] transition-all group-hover:shadow-[3px_3px_0px_#000000] group-hover:translate-x-[-1px] group-hover:translate-y-[-1px]">
               <svg
-                className="h-5 w-5 text-white"
+                className="h-4 w-4 md:h-5 md:w-5 text-white"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={3}
@@ -36,45 +36,47 @@ export default function Header() {
                 />
               </svg>
             </div>
-            <span className="text-lg font-black uppercase tracking-tight text-black">
+            <span className="text-base md:text-lg font-black uppercase tracking-tight text-black">
               DealerInbound
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
+          {/* Desktop Navigation - Centered */}
+          <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative px-4 py-2 font-mono text-sm font-bold uppercase tracking-wide transition-all ${
+                className={`font-mono text-sm font-medium transition-all ${
                   pathname === link.href
-                    ? "bg-black text-white"
-                    : "text-black hover:bg-black hover:text-white"
+                    ? "text-black font-bold"
+                    : "text-gray-600 hover:text-black"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/contact"
-              className="ml-4 border-4 border-black bg-[#ff3d00] px-4 py-2 font-mono text-sm font-bold uppercase text-white shadow-[2px_2px_0px_#000000] transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_#000000]"
-            >
-              Get Demo
-            </Link>
           </nav>
+
+          {/* CTA Button - Yellow Pill */}
+          <Link
+            href="/contact"
+            className="hidden md:inline-flex items-center justify-center rounded-full border-[3px] border-black bg-[#ffcc00] px-5 py-2 font-mono text-sm font-bold uppercase text-black shadow-[2px_2px_0px_#000000] transition-all hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[3px_3px_0px_#000000]"
+          >
+            Contact
+          </Link>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden border-4 border-black bg-white p-2 shadow-[2px_2px_0px_#000000]"
+            className="md:hidden border-3 border-black bg-white p-2 shadow-[2px_2px_0px_#000000]"
           >
             {mobileMenuOpen ? (
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
@@ -90,7 +92,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-3 font-mono text-lg font-bold uppercase ${
+                  className={`px-4 py-3 font-mono text-base font-bold uppercase ${
                     pathname === link.href
                       ? "bg-black text-white"
                       : "text-black hover:bg-black hover:text-white"
@@ -102,9 +104,9 @@ export default function Header() {
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-2 border-4 border-black bg-[#ff3d00] px-4 py-3 font-mono text-lg font-bold uppercase text-white text-center shadow-[4px_4px_0px_#000000]"
+                className="mt-2 rounded-full border-3 border-black bg-[#ffcc00] px-4 py-3 font-mono text-base font-bold uppercase text-black text-center shadow-[3px_3px_0px_#000000]"
               >
-                Get Demo
+                Contact
               </Link>
             </nav>
           </div>
