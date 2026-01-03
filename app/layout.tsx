@@ -40,8 +40,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         style={{ backgroundColor: '#000000', margin: 0, padding: 0 }}
       >
-        <div style={{ margin: '8px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          <div className="sticky z-50 rounded-[18px] overflow-hidden bg-white" style={{ top: '8px' }}>
+        <div style={{ margin: 'var(--spacing)', display: 'flex', flexDirection: 'column', gap: 'var(--spacing)' }}>
+          <div className="sticky z-50 rounded-[18px] overflow-hidden bg-white" style={{ top: 'var(--spacing)' }}>
             <TopBanner />
             <Header />
           </div>

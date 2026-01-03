@@ -11,7 +11,7 @@ html, body {
 }
 
 :root {
-  --spacing: 8px;
+  --spacing: 6px;
   --background: #fffef0;
   --foreground: #000000;
   --primary: #ff3d00;
@@ -50,6 +50,9 @@ body {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0px #000000;
 }
+
+/* Debug: Uncomment to see actual box boundaries */
+/* * { outline: 1px solid red !important; } */
 
 /* Marquee animation */
 @keyframes marquee {
